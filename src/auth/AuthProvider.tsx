@@ -25,18 +25,41 @@ const requireClient = () => {
   return supabase;
 };
 
+const firstParam = (value: string | string[] | undefined) => Array.isArray(value) ? value[0] : value;
+
+const exchangeAuthCallback = async (url: string, client: NonNullable<typeof supabase>) => {
+  const { queryParams } = ExpoLinking.parse(url);
+  const errorDescription = firstParam(queryParams?.error_description) ?? firstParam(queryParams?.error);
+  if (errorDescription) throw new Error(decodeURIComponent(errorDescription.replace(/\\+/g, ' ')));
+
+  const code = firstParam(queryParams?.code);
+  if (code) {
+    const { error } = await client.auth.exchangeCodeForSession(code);
+    if (error) throw error;
+    return;
+  }
+
+  const hashParams = new URLSearchParams(url.split('#')[1] ?? '');
+  const accessToken = hashParams.get('access_token');
+  const refreshToken = hashParams.get('refresh_token');
+  if (accessToken && refreshToken) {
+    const { error } = await client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
+    if (error) throw error;
+    return;
+  }
+
+  throw new Error('Authentication callback did not contain a valid session.');
+};
+
 export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [session, setSession] = useState<Session | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => Boolean(supabase));
   const activeCallback = useRef<string | null>(null);
   const callbackUrl = ExpoLinking.useLinkingURL();
 
   useEffect(() => {
     let mounted = true;
-    if (!supabase) {
-      setLoading(false);
-      return;
-    }
+    if (!supabase) return;
 
     supabase.auth.getSession().then(({ data }) => {
       if (!mounted) return;
@@ -59,11 +82,11 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
     if (Platform.OS === 'web' || !callbackUrl || !supabase) return;
     const { path, queryParams } = ExpoLinking.parse(callbackUrl);
     if (path !== 'auth/callback' && path !== 'callback') return;
-    const code = queryParams?.code;
-    if (typeof code !== 'string' || activeCallback.current === code) return;
-    activeCallback.current = code;
-    supabase.auth.exchangeCodeForSession(code).then(({ error }) => {
-      if (error) activeCallback.current = null;
+    const callbackKey = firstParam(queryParams?.code) ?? callbackUrl;
+    if (activeCallback.current === callbackKey) return;
+    activeCallback.current = callbackKey;
+    exchangeAuthCallback(callbackUrl, supabase).catch(() => {
+      activeCallback.current = null;
     });
   }, [callbackUrl]);
 
