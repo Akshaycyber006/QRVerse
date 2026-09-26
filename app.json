@@ -27,15 +27,15 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow Agon to scan QR codes.",
+          "cameraPermission": "Allow qrverse to scan QR codes.",
           "microphonePermission": false
         }
       ],
-      ["expo-image-picker", { "photosPermission": "Allow Agon to choose an image for translation.", "cameraPermission": "Allow Agon to capture text for translation.", "microphonePermission": false }],
-      ["expo-media-library", { "photosPermission": "Allow Agon to save your QR images to your photo library.", "savePhotosPermission": "Allow Agon to save QR images to your photo library.", "granularPermissions": ["photo"] }],
+      ["expo-image-picker", { "photosPermission": "Allow qrverse to choose an image for translation.", "cameraPermission": "Allow qrverse to capture text for translation.", "microphonePermission": false }],
+      ["expo-media-library", { "photosPermission": "Allow qrverse to save your QR images to your photo library.", "savePhotosPermission": "Allow qrverse to save QR images to your photo library.", "granularPermissions": ["photo"] }],
       ["expo-mlkit-ocr", { "iosEngine": "auto" }],
       ["expo-build-properties", { "ios": { "deploymentTarget": "16.4", "useFrameworks": "static" } }],
-      ["expo-nearby-connections", { "bonjourServicesName": "agon", "localNetworkUsagePermissionText": "Agon uses your local network to send files to nearby devices.", "bluetoothUsagePermissionText": "Agon uses Bluetooth to find and connect to nearby devices." }],
+      ["expo-nearby-connections", { "bonjourServicesName": "qrverse", "localNetworkUsagePermissionText": "qrverse uses your local network to send files to nearby devices.", "bluetoothUsagePermissionText": "qrverse uses Bluetooth to find and connect to nearby devices." }],
       "expo-web-browser",
         "expo-sharing"
     ],
