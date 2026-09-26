@@ -34,6 +34,6 @@ npx expo start
 
 If you use **QRVerse** in research, academic publications, software projects, or presentations, please cite this software using its official Zenodo DOI.
 
-**DOI:** `10.5281/zenodo.22978800`
+**DOI:** `10.5281/zenodo.22978801`
 
 **Permanent Link:** https://doi.org/10.5281/zenodo.22978801
