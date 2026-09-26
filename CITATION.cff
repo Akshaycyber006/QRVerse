@@ -1,49 +1,28 @@
-cff-version: 1.1.0
-
+cff-version: 1.2.0
 title: "QRVerse"
-message: "If you use QRVerse in research, publications, or software projects, please cite this software using the metadata provided in this file."
-
+message: "If you use QRVerse, please cite this software."
 type: software
 
 authors:
-  - given-names: "Akshay"
-    family-names: "Krishna"
+  - family-names: "Krishna"
+    given-names: "Akshay"
+
+version: "1.0.0"
+date-released: 2026-09-26
 
 repository-code: "https://github.com/Akshaycyber006/QRVerse"
+url: "https://github.com/Akshaycyber006/QRVerse"
 
 abstract: >
-  QRVerse is a cross-platform smart QR platform that enables users to generate
-  interactive QR cards for files, images, text, URLs, contacts, and Wi-Fi credentials,
-  perform offline file transfers between nearby devices, organize digital content,
-  and leverage AI-powered text recognition and translation.
+  QRVerse is a cross-platform smart QR platform built with Expo and React Native.
+  It enables QR generation, offline file transfer, AI-powered OCR translation,
+  Supabase authentication, and cloud storage.
 
 keywords:
-  - QR Code
-  - File Sharing
-  - Offline Transfer
-  - OCR
-  - AI Translation
-  - Mobile Application
+  - QR
   - Expo
   - React Native
   - Supabase
+  - Mobile App
 
-license: "Proprietary"
-
-version: "1.0.0"
-
-date-released: "2026-09-26"
-
-url: "https://github.com/Akshaycyber006/QRVerse"
-
-repository-artifact: "https://github.com/Akshaycyber006/QRVerse/releases/tag/v1.0.0"
-
-preferred-citation:
-  type: software
-  authors:
-    - given-names: "Akshay"
-      family-names: "Krishna"
-  title: "QRVerse"
-  version: "1.0.0"
-  date-released: "2026-09-26"
-  url: "https://github.com/Akshaycyber006/QRVerse"
+license: "MIT"
