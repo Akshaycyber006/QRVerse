@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "Agon Preview",
+    "slug": "agon-preview",
+    "scheme": "agon",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "permissions": ["android.permission.BLUETOOTH_ADVERTISE", "android.permission.BLUETOOTH_CONNECT", "android.permission.BLUETOOTH_SCAN", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION", "android.permission.NEARBY_WIFI_DEVICES"],
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Agon to scan QR codes.",
+          "microphonePermission": false
+        }
+      ],
+      ["expo-image-picker", { "photosPermission": "Allow Agon to choose an image for translation.", "cameraPermission": "Allow Agon to capture text for translation.", "microphonePermission": false }],
+      ["expo-media-library", { "photosPermission": "Allow Agon to save your QR images to your photo library.", "savePhotosPermission": "Allow Agon to save QR images to your photo library.", "granularPermissions": ["photo"] }],
+      ["expo-mlkit-ocr", { "iosEngine": "auto" }],
+      ["expo-build-properties", { "ios": { "deploymentTarget": "16.4", "useFrameworks": "static" } }],
+      ["expo-nearby-connections", { "bonjourServicesName": "agon", "localNetworkUsagePermissionText": "Agon uses your local network to send files to nearby devices.", "bluetoothUsagePermissionText": "Agon uses Bluetooth to find and connect to nearby devices." }],
+      "expo-web-browser",
+        "expo-sharing"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "552f0665-e30d-4f11-9ea9-97bc22a22809"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/552f0665-e30d-4f11-9ea9-97bc22a22809"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "owner": "arcadalabs",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ]
+  }
+}
