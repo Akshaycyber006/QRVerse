@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Agon Preview",
-    "slug": "agon-preview",
-    "scheme": "agon",
+    "name": "QRVerse",
+    "slug": "qrverse",
+    "scheme: qrverse",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -50,7 +50,7 @@
     "runtimeVersion": {
       "policy": "appVersion"
     },
-    "owner": "arcadalabs",
+    "owner: akshaycyber006",
     "platforms": [
       "ios",
       "android",
