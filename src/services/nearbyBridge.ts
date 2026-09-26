@@ -4,7 +4,7 @@ type Nearby = typeof import('expo-nearby-connections');
 let nearbyModule: Nearby | null = null;
 
 const nearby = async (): Promise<Nearby> => {
-  if (Platform.OS === 'web') throw new Error('Offline transfer requires the Agon development build on Android or iOS.');
+  if (Platform.OS === 'web') throw new Error('Offline transfer requires the QRVerse development build on Android or iOS.');
   if (Platform.OS === 'android' && Number(Platform.Version) >= 23) {
     const apiLevel = Number(Platform.Version);
     const requested = apiLevel >= 31
