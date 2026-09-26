@@ -1,6 +1,11 @@
 cff-version: 1.2.0
+
 title: "QRVerse"
-message: "If you use QRVerse, please cite this software."
+
+message: >
+  If you use QRVerse in research, publications, or software projects,
+  please cite this software using the metadata below.
+
 type: software
 
 authors:
@@ -8,21 +13,35 @@ authors:
     given-names: "Akshay"
 
 version: "1.0.0"
+
 date-released: 2026-09-26
+
+license: "MIT"
 
 repository-code: "https://github.com/Akshaycyber006/QRVerse"
 url: "https://github.com/Akshaycyber006/QRVerse"
 
+identifiers:
+  - type: doi
+    description: "Zenodo DOI"
+    value: "10.5281/zenodo.22978801"
+
 abstract: >
-  QRVerse is a cross-platform smart QR platform built with Expo and React Native.
-  It enables QR generation, offline file transfer, AI-powered OCR translation,
-  Supabase authentication, and cloud storage.
+  QRVerse is a cross-platform smart QR platform built with Expo SDK 57,
+  React Native, TypeScript, and Supabase. It enables users to generate
+  interactive QR codes for files, images, text, URLs, contacts, and Wi-Fi,
+  while supporting cloud synchronization, AI-powered OCR translation, and
+  offline file transfer architecture for nearby device sharing.
 
 keywords:
-  - QR
+  - QR codes
   - Expo
   - React Native
+  - TypeScript
   - Supabase
-  - Mobile App
-
-license: "MIT"
+  - Mobile Application
+  - OCR
+  - File Sharing
+  - Offline Transfer
+  - Cross-Platform
+  - AI
