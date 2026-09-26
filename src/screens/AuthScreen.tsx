@@ -65,7 +65,7 @@ export const AuthScreen: React.FC = () => {
               <View style={{ width: 64, height: 64, borderRadius: 22, backgroundColor: theme.colors.primary, alignItems: 'center', justifyContent: 'center' }}>
                 <Ionicons name="qr-code" size={30} color="#fff" />
               </View>
-              <Text style={{ color: theme.colors.text, fontSize: 28, fontWeight: '800', letterSpacing: -0.8, marginTop: 16 }}>Agon</Text>
+              <Text style={{ color: theme.colors.text, fontSize: 28, fontWeight: '800', letterSpacing: -0.8, marginTop: 16 }}>QRVerse</Text>
               <Text style={{ color: theme.colors.textTertiary, fontSize: 13, fontWeight: '600', marginTop: 4 }}>
                 {isSignUp ? 'Create your account to get started' : 'Sign in to continue'}
               </Text>
@@ -126,7 +126,7 @@ export const AuthScreen: React.FC = () => {
                 onPress={() => setIsSignUp(current => !current)}
                 style={{ color: theme.colors.primary, fontSize: 13, fontWeight: '800', textAlign: 'center', marginTop: 20 }}
               >
-                {isSignUp ? 'Already have an account? Sign in' : 'New to Agon? Create an account'}
+                {isSignUp ? 'Already have an account? Sign in' : 'New to QRVerse? Create an account'}
               </Text>
             </GlassCard>
           </ScrollView>
